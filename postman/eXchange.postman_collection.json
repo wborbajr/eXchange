@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"name\":\"kkkk\"\n}",
+					"raw": "{\n\"name\": \"req.body.name\",\n\"andress\": \"req.body.andress\",\n\"phone\": \"req.body.phone\",\n\"phone2\": \"req.body.phone2\",\n\"zipcode\": \"req.body.zipcode\",\n\"city\": \"req.body.city\",\n\"state\": \"req.body.state\",\n\"email\": \"req.body.email\",\n\"dtbirth\": \"2020-05-05\",\n\"numidentification\": \"req.body.numidentification\",\n\"comissionpercent\": \"2.99\",\n\"attention\": \"req.body.attention\",\n\"picture_path\": \"req.body.picture_path\",\n\"active\": \"1\",\n\"restriction\": 0\n}",
 					"options": {
 						"raw": {
 							"language": "json"

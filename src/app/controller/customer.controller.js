@@ -9,8 +9,20 @@ exports.create = (req, res) => {
 	// Save to MariaDB database
 	Customer.create({  
 			name: req.body.name,
-			address: req.body.address,
-			message: req.body.message
+			andress: req.body.andress,
+			phone: req.body.phone,
+			phone2: req.body.phone2,
+			zipcode: req.body.zipcode,
+			city: req.body.city,
+			state: req.body.state,
+			email: req.body.email,
+			dtbirth: req.body.dtbirth,
+			numidentification: req.body.numidentification,
+			comissionpercent: req.body.comissionpercent,
+			attention: req.body.attention,
+			picture_path: req.body.picture_path,
+			active: req.body.active,
+			restriction: req.body.restriction
 		})
 		.then(customer => {		
 			// Send created customer to client
