@@ -4,7 +4,8 @@ const Customer = db.customers;
 // Post a Customer
 exports.create = (req, res) => {	
 
-	console.log(req.body);
+	// console.log(req.body);
+	console.log(`Customer: ${Customer}`)
 	
 	// Save to MariaDB database
 	Customer.create({  
@@ -43,9 +44,11 @@ exports.findAll = (req, res) => {
 };
 
 // Find a Customer by Id
-exports.findById = (req, res) => {  
-	console.log(Customer)
-	Customer.findById(req.params.customerId,
+exports.findByPk = (req, res) => {  
+	
+	console.log(`Customer: ${Customer}`)
+
+	Customer.findByPk(req.params.customerId,
 		{attributes: { exclude: ["createdAt", "updatedAt"] }}
 		)
 		.then(customer => {
@@ -60,7 +63,7 @@ exports.findById = (req, res) => {
 
 // Update a Customer
 exports.update = (req, res) => {
-	return Customer.findById(req.params.customerId)
+	return Customer.findByPk(req.params.customerId)
 		.then(
 			customer => {
 				if(!customer){
@@ -95,7 +98,7 @@ exports.update = (req, res) => {
 // Delete a Customer by Id
 exports.delete = (req, res) => {
 	return Customer
-		.findById(req.params.customerId)
+		.findByPk(req.params.customerId)
 		.then(customer => {
 			if(!customer) {
 				return res.status(400).send({
