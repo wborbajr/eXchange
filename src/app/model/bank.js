@@ -2,12 +2,12 @@
 
 module.exports = function(sequelize, Sequelize) {
   const Bank = sequelize.define('bank', {
-    idbank: {
-      type: Sequelize.INTEGER(11),
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
+    // idbank: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true
+    // },
     namebank: {
       type: Sequelize.STRING(50),
       allowNull: true
