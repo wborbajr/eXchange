@@ -16,6 +16,7 @@ require('./app/route/city.route.js')(app);
 require('./app/route/typeproduct.route.js')(app);
 require('./app/route/identification.route.js')(app);
 require('./app/route/coverage.route.js')(app);
+require('./app/route/licensecountry.route.js')(app);
 
  
 // Create a Server
