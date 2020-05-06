@@ -14,6 +14,7 @@ require('./app/route/customer.route.js')(app);
 require('./app/route/bank.route.js')(app);
 require('./app/route/city.route.js')(app);
 require('./app/route/typeproduct.route.js')(app);
+require('./app/route/identification.route.js')(app);
 
  
 // Create a Server
