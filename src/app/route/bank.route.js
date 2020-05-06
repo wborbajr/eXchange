@@ -2,18 +2,18 @@ module.exports = function(app) {
  
     const banks = require('../controller/bank.controller.js');
  
-    // Create a new Bank
+    // Create a new 
     app.post('/api/banks/create', banks.create);
  
-    // Retrieve all Bank
+    // Retrieve all 
     app.get('/api/banks', banks.findAll);
  
-    // Retrieve a single Bank by Id
+    // Retrieve a single by Id
     app.get('/api/banks/:bankId', banks.findByPk);
  
-    // Update a Bank with Id
+    // Update a with Id
     app.put('/api/banks/:bankId', banks.update);
  
-    // Delete a Bank with Id
+    // Delete a with Id
     app.delete('/api/banks/:bankId', banks.delete);
 }

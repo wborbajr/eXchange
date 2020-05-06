@@ -1,7 +1,7 @@
 const db = require('../config/db.config.js');
 const Customer = db.customers;
 
-// Post a Customer
+// Post 
 exports.create = (req, res) => {	
 
 	// console.log(req.body);
@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 		.catch(error => res.status(400).send(error))
 };
  
-// Fetch all Customers
+// Fetch all 
 exports.findAll = (req, res) => {
 	Customer.findAll({
 			attributes: { exclude: ["createdAt", "updatedAt"] }
@@ -43,7 +43,7 @@ exports.findAll = (req, res) => {
 		.catch(error => res.status(400).send(error))
 };
 
-// Find a Customer by Id
+// Find by Id
 exports.findByPk = (req, res) => {  
 	
 	console.log(`Customer: ${Customer}`)
@@ -61,7 +61,7 @@ exports.findByPk = (req, res) => {
 		.catch(error => res.status(400).send(error));
 };
 
-// Update a Customer
+// Update by Id
 exports.update = (req, res) => {
 	return Customer.findByPk(req.params.customerId)
 		.then(
@@ -95,7 +95,7 @@ exports.update = (req, res) => {
 		.catch((error) => res.status(400).send(error));			 
 };
  
-// Delete a Customer by Id
+// Delete a by Id
 exports.delete = (req, res) => {
 	return Customer
 		.findByPk(req.params.customerId)

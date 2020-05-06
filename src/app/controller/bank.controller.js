@@ -1,7 +1,7 @@
 const db = require('../config/db.config.js');
 const Bank = db.banks;
 
-// Post a Bank
+// Post a 
 exports.create = (req, res) => {	
 
 	// Save to MariaDB database
@@ -17,7 +17,7 @@ exports.create = (req, res) => {
 		.catch(error => res.status(400).send(error))
 };
  
-// Fetch all Banks
+// Fetch all 
 exports.findAll = (req, res) => {
 	Bank.findAll({
 			attributes: { exclude: ["createdAt", "updatedAt"] }
@@ -28,7 +28,7 @@ exports.findAll = (req, res) => {
 		.catch(error => res.status(400).send(error))
 };
 
-// Find a Bank by Id
+// Find by Id
 exports.findByPk = (req, res) => {  
 	Bank.findByPk(req.params.bankId,
 		{attributes: { exclude: ["createdAt", "updatedAt"] }}
@@ -43,7 +43,7 @@ exports.findByPk = (req, res) => {
 		.catch(error => res.status(400).send(error));
 };
 
-// Update a Bank
+// Update
 exports.update = (req, res) => {
 	return Bank.findByPk(req.params.bankId)
 		.then(
@@ -65,7 +65,7 @@ exports.update = (req, res) => {
 		.catch((error) => res.status(400).send(error));			 
 };
  
-// Delete a Bank by Id
+// Delete by Id
 exports.delete = (req, res) => {
 	return Bank
 		.findByPk(req.params.bankId)

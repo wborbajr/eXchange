@@ -1,60 +1,60 @@
 const db = require('../config/db.config.js');
-const City = db.cities;
+const Typeproduct = db.typeproducts;
 
 // Post
 exports.create = (req, res) => {	
 
 	// Save to MariaDB database
-	City.create({  
-			name_city: req.body.name_city
+	Typeproduct.create({  
+			nametypeproduct: req.body.nametypeproduct
 		})
-		.then(city => {		
-			// Send created city to client
-			res.json(city);
+		.then(typeproduct => {		
+			// Send created typeproduct to client
+			res.json(typeproduct);
 		})
 		.catch(error => res.status(400).send(error))
 };
  
 // Fetch all 
 exports.findAll = (req, res) => {
-	City.findAll({
+	Typeproduct.findAll({
 			attributes: { exclude: ["createdAt", "updatedAt"] }
 		})
-		.then(cities => {
-			res.json(cities);
+		.then(typeproducts => {
+			res.json(typeproducts);
 		})
 		.catch(error => res.status(400).send(error))
 };
 
 // Find by Id
 exports.findByPk = (req, res) => {  
-	City.findByPk(req.params.cityId,
+	Typeproduct.findByPk(req.params.typeproductId,
 		{attributes: { exclude: ["createdAt", "updatedAt"] }}
 		)
-		.then(city => {
-			if (!city){
-				return res.status(404).json({message: "City Not Found"})
+		.then(typeproduct => {
+			if (!typeproduct){
+				return res.status(404).json({message: "Typeproduct Not Found"})
 			}
-			return res.status(200).json(city)
+			return res.status(200).json(typeproduct)
 		  }
 		)
 		.catch(error => res.status(400).send(error));
 };
 
-// Update 
+// Update a
 exports.update = (req, res) => {
-	return City.findByPk(req.params.cityId)
+	return Typeproduct.findByPk(req.params.typeproductId)
 		.then(
-			city => {
-				if(!city){
+			typeproduct => {
+				if(!typeproduct){
 					return res.status(404).json({
-						message: 'City Not Found',
+						message: 'Type Product Not Found',
 					});
 				}
-				return city.update({
-										name_city: req.body.name_city
+				return typeproduct.update({
+										nametypeproduct: req.body.nametypeproduct
 									})
-									.then(() => res.status(200).json(city))
+									.then(() => res.status(200).json(typeproduct))
 									.catch((error) => res.status(400).send(error));
 				}
 			)
@@ -63,16 +63,16 @@ exports.update = (req, res) => {
  
 // Delete by Id
 exports.delete = (req, res) => {
-	return City
-		.findByPk(req.params.cityId)
-		.then(city => {
-			if(!city) {
+	return Typeproduct
+		.findByPk(req.params.typeproductId)
+		.then(typeproduct => {
+			if(!typeproduct) {
 				return res.status(400).send({
-					message: 'City Not Found',
+					message: 'Type Pproduct Not Found',
 				});
 			}
 
-			return city.destroy()
+			return typeproduct.destroy()
 				.then(() => res.status(200).json({message: "Destroy successfully!"}))
 				.catch(error => res.status(400).send(error));
 		})

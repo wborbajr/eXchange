@@ -10,15 +10,15 @@ module.exports = function(sequelize, Sequelize) {
     // },
     namebank: {
       type: Sequelize.STRING(50),
-      allowNull: true
+      allowNull: false
     },
     agency: {
       type: Sequelize.STRING(15),
-      allowNull: true
+      allowNull: false
     },
     count: {
       type: Sequelize.STRING(15),
-      allowNull: true
+      allowNull: false
     }
   });
 

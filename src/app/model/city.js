@@ -10,7 +10,25 @@ module.exports = function(sequelize, Sequelize) {
     // },
     name_city: {
       type: Sequelize.STRING(40),
-      allowNull: true
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: "Field is required"
+        },
+        is: {
+          args: ["^[a-z]+$", 'i'],
+          msg: "Only letters allowed"
+        },
+        len: {
+          args: [4,40],
+          msg: "String length is not in this range {4,40}"
+        },
+        notNull: {
+          args: true,
+          msg: "String can not be null"
+        } 
+      }
     }
   });
 

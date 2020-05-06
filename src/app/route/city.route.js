@@ -2,18 +2,18 @@ module.exports = function(app) {
  
     const cities = require('../controller/city.controller.js');
  
-    // Create a new City
+    // Create a new 
     app.post('/api/cities/create', cities.create);
  
-    // Retrieve all City
+    // Retrieve all 
     app.get('/api/cities', cities.findAll);
  
-    // Retrieve a single City by Id
+    // Retrieve a single by Id
     app.get('/api/cities/:cityId', cities.findByPk);
  
-    // Update a City with Id
+    // Update a with Id
     app.put('/api/cities/:cityId', cities.update);
  
-    // Delete a City with Id
+    // Delete a with Id
     app.delete('/api/cities/:cityId', cities.delete);
 }
