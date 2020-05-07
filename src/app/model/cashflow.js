@@ -2,11 +2,23 @@
 
 module.exports = function(sequelize, Sequelize) {
   const Cashflow = sequelize.define('cashflow', {
-    idcashflow: {
-      type: Sequelize.INTEGER(11),
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+    // idcashflow: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true
+    // },
+    fk_idcountry: {
+      type: Sequelize.INTEGER(10).UNSIGNED,
+      allowNull: true
+    },
+    fk_idmaker: {
+      type: Sequelize.INTEGER(10).UNSIGNED,
+      allowNull: true
+    },
+    fk_idcoverage: {
+      type: Sequelize.INTEGER(10).UNSIGNED,
+      allowNull: true
     },
     fk_idcompany: {
       type: Sequelize.INTEGER(11),
@@ -18,10 +30,6 @@ module.exports = function(sequelize, Sequelize) {
     },
     fk_idcustomer: {
       type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    customer_phone: {
-      type: Sequelize.STRING(20),
       allowNull: true
     },
     fk_idtypeproduct: {
@@ -42,6 +50,10 @@ module.exports = function(sequelize, Sequelize) {
     },
     fk_idchartaccounts: {
       type: Sequelize.INTEGER(11),
+      allowNull: true
+    },
+    customer_phone: {
+      type: Sequelize.STRING(20),
       allowNull: true
     },
     dtcashflow: {
@@ -145,24 +157,12 @@ module.exports = function(sequelize, Sequelize) {
       type: Sequelize.STRING(40),
       allowNull: true
     },
-    fk_idcountry: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: true
-    },
-    fk_idmaker: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: true
-    },
     year: {
       type: Sequelize.CHAR(4),
       allowNull: true
     },
     model: {
       type: Sequelize.STRING(20),
-      allowNull: true
-    },
-    fk_idcoverage: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
       allowNull: true
     },
     description: {

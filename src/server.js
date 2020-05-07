@@ -18,6 +18,7 @@ require('./app/route/identification.route.js')(app);
 require('./app/route/coverage.route.js')(app);
 require('./app/route/licensecountry.route.js')(app);
 require('./app/route/classcustomer.route.js')(app);
+require('./app/route/cashflow.route.js')(app);
 
  
 // Create a Server
