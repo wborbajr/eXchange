@@ -790,6 +790,224 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/classcustomers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/classcustomers",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"classcustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/classcustomers/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"req.namelicense\",\n    \"seeincompany\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/classcustomers/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"classcustomers",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/classcustomers/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/classcustomers/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"classcustomers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/classcustomers/3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"req.namelicense\",\n    \"seeincompany\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/classcustomers/3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"classcustomers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/cashflows/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_phone\": \"1235234,\",\n    \"dtcashflow\": \"2020-06-06\",\n    \"tchaflow\": \"12:01\",\n    \"amountflow\": \"2.99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/cashflows/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cashflows",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/ccashflows/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_phone\": \"123,\",\n    \"dtcashflow\": \"2020-06-06\",\n    \"tchaflow\": \"12:01\",\n    \"amountflow\": \"2.99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/cashflows/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cashflows",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/cashflows/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/cashflows/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cashflows",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/cashflows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/cashflows",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cashflows"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
