@@ -1,13 +1,13 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, Sequelize) {
-  const Menu_option = sequelize.define('menu_option', {
-    idmenu_options: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
+  const Menu = sequelize.define('menu', {
+    // idmenus: {
+    //   type: Sequelize.INTEGER(10).UNSIGNED,
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true
+    // },
     menu: {
       type: Sequelize.STRING(40),
       allowNull: true
@@ -30,5 +30,5 @@ module.exports = function (sequelize, Sequelize) {
     }
   });
 
-  return Menu_option;
+  return Menu;
 };
