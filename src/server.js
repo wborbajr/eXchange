@@ -21,6 +21,7 @@ require('./app/route/classcustomer.route.js')(app);
 require('./app/route/cashflow.route.js')(app);
 require('./app/route/chartaccount.route.js')(app);
 require('./app/route/login.route.js')(app);
+require('./app/route/maker.route.js')(app);
 
 // Create a Server
 var server = app.listen(9090, function () {

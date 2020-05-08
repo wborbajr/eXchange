@@ -35,7 +35,6 @@ db.makers = require('../model/maker.js')(sequelize, Sequelize);
 db.menu_options = require('../model/menu_option.js')(sequelize, Sequelize);
 db.parameters = require('../model/parameter.js')(sequelize, Sequelize);
 db.products = require('../model/product.js')(sequelize, Sequelize);
-db.testes = require('../model/teste.js')(sequelize, Sequelize);
 db.typeproducts = require('../model/typeproduct.js')(sequelize, Sequelize);
 db.wiredetails = require('../model/wiredetail.js')(sequelize, Sequelize);
 
