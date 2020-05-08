@@ -2,16 +2,16 @@
 
 module.exports = function(sequelize, Sequelize) {
   const Product = sequelize.define('product', {
-    idproduct: {
-      type: Sequelize.INTEGER(11),
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    fk_idtypeproduct: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
+    // idproduct: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true
+    // },
+    // fk_idtypeproduct: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
     nameproduct: {
       type: Sequelize.STRING(50),
       allowNull: true

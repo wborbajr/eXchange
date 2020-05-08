@@ -2,56 +2,61 @@
 
 module.exports = function(sequelize, Sequelize) {
   const Cashflow = sequelize.define('cashflow', {
+    // uuid: {
+    //   type: Sequelize.UUID,
+    //   defaultValue: Sequelize.UUIDV1,
+    //   primaryKey: true
+    // },
     // idcashflow: {
     //   type: Sequelize.INTEGER(11),
     //   allowNull: false,
     //   primaryKey: true,
     //   autoIncrement: true
     // },
-    fk_idcountry: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: true
-    },
-    fk_idmaker: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: true
-    },
-    fk_idcoverage: {
-      type: Sequelize.INTEGER(10).UNSIGNED,
-      allowNull: true
-    },
-    fk_idcompany: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    idchartaccounts: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    fk_idcustomer: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    fk_idtypeproduct: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    fk_idproduct: {
-      type: Sequelize.INTEGER(10),
-      allowNull: true
-    },
-    fk_idbankmaster: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    fk_idbankclient: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
-    fk_idchartaccounts: {
-      type: Sequelize.INTEGER(11),
-      allowNull: true
-    },
+    // fk_idcountry: {
+    //   type: Sequelize.INTEGER(10).UNSIGNED,
+    //   allowNull: true
+    // },
+    // fk_idmaker: {
+    //   type: Sequelize.INTEGER(10).UNSIGNED,
+    //   allowNull: true
+    // },
+    // fk_idcoverage: {
+    //   type: Sequelize.INTEGER(10).UNSIGNED,
+    //   allowNull: true
+    // },
+    // fk_idcompany: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // idchartaccounts: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // fk_idcustomer: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // fk_idtypeproduct: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // fk_idproduct: {
+    //   type: Sequelize.INTEGER(10),
+    //   allowNull: true
+    // },
+    // fk_idbankmaster: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // fk_idbankclient: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
+    // fk_idchartaccounts: {
+    //   type: Sequelize.INTEGER(11),
+    //   allowNull: true
+    // },
     customer_phone: {
       type: Sequelize.STRING(20),
       allowNull: true

@@ -48,10 +48,10 @@ module.exports = function(sequelize, Sequelize) {
       type: Sequelize.STRING(20),
       allowNull: true
     },
-    city: {
-      type: Sequelize.STRING(40),
-      allowNull: true
-    },
+    // city: {
+    //   type: Sequelize.STRING(40),
+    //   allowNull: true
+    // },
     state: {
       type: Sequelize.STRING(40),
       allowNull: true
