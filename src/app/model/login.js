@@ -10,13 +10,13 @@ module.exports = function (sequelize, Sequelize) {
     //   primaryKey: true,
     //   autoIncrement: true
     // },
-    login: {
+    username: {
       type: Sequelize.STRING(40),
       allowNull: false,
       validate: {
         len: {
           args: [0, 40],
-          msg: 'Login must be maximum length 40 characters'
+          msg: 'Username must be maximum length 40 characters'
         }
       }
     },
@@ -52,16 +52,16 @@ module.exports = function (sequelize, Sequelize) {
       allowNull: true
     }
   }
-    , {
-      instanceMethods: {
-        generateHash: function (password) {
-          return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
-        },
-        validPassword: function (password) {
-          return bcrypt.compareSync(password, this.password)
-        }
-      }
-    }
+    // , {
+    //   instanceMethods: {
+    //     generateHash: function (password) {
+    //       return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
+    //     },
+    //     validPassword: function (password) {
+    //       return bcrypt.compareSync(password, this.password)
+    //     }
+    //   }
+    // }
 
 
 
@@ -69,16 +69,16 @@ module.exports = function (sequelize, Sequelize) {
 
   );
 
-  Login.beforeCreate((login, options) => {
+  // Login.beforeCreate((login, options) => {
 
-    return bcrypt.hash(login.senha, 10)
-      .then(hash => {
-        login.senha = hash;
-      })
-      .catch(err => {
-        throw new Error();
-      });
-  });
+  //   return bcrypt.hash(login.senha, 10)
+  //     .then(hash => {
+  //       login.senha = hash;
+  //     })
+  //     .catch(err => {
+  //       throw new Error();
+  //     });
+  // });
 
   return Login;
 };

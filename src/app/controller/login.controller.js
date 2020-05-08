@@ -1,83 +1,89 @@
 const db = require('../config/db.config.js');
-const Bank = db.banks;
+const Login = db.logins;
 
 // Post a 
-exports.create = (req, res) => {	
+exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Bank.create({  
-			namebank: req.body.namebank,
-			agency: req.body.agency,
-			count: req.body.count
-		})
-		.then(bank => {		
-			// Send created bank to client
-			res.json(bank);
+	Login.create({
+		username: req.body.username,
+		password: req.body.password,
+		name: req.body.name,
+		email: req.body.email,
+		perfil: req.body.perfil,
+		active: req.body.active
+	})
+		.then(login => {
+			// Send created login to client
+			res.json(login);
 		})
 		.catch(error => res.status(400).send(error))
 };
- 
+
 // Fetch all 
 exports.findAll = (req, res) => {
-	Bank.findAll({
-			attributes: { exclude: ["createdAt", "updatedAt"] }
-		})
-		.then(banks => {
-			res.json(banks);
+	Login.findAll({
+		attributes: { exclude: ["createdAt", "updatedAt"] }
+	})
+		.then(logins => {
+			res.json(logins);
 		})
 		.catch(error => res.status(400).send(error))
 };
 
 // Find by Id
-exports.findByPk = (req, res) => {  
-	Bank.findByPk(req.params.bankId,
-		{attributes: { exclude: ["createdAt", "updatedAt"] }}
-		)
-		.then(bank => {
-			if (!bank){
-				return res.status(404).json({message: "Bank Not Found"})
+exports.findByPk = (req, res) => {
+	Login.findByPk(req.params.loginId,
+		{ attributes: { exclude: ["createdAt", "updatedAt"] } }
+	)
+		.then(login => {
+			if (!login) {
+				return res.status(404).json({ message: "Login Not Found" })
 			}
-			return res.status(200).json(bank)
-		  }
+			return res.status(200).json(login)
+		}
 		)
 		.catch(error => res.status(400).send(error));
 };
 
 // Update
 exports.update = (req, res) => {
-	return Bank.findByPk(req.params.bankId)
+	return Login.findByPk(req.params.loginId)
 		.then(
-			bank => {
-				if(!bank){
+			login => {
+				if (!login) {
 					return res.status(404).json({
-						message: 'Bank Not Found',
+						message: 'Login Not Found',
 					});
 				}
-				return bank.update({
-										namebank: req.body.namebank,
-										agency: req.body.agency,
-										count: req.body.count
-									})
-									.then(() => res.status(200).json(bank))
-									.catch((error) => res.status(400).send(error));
-				}
-			)
-		.catch((error) => res.status(400).send(error));			 
+				return login.update({
+					username: req.body.username,
+					password: req.body.password,
+					name: req.body.name,
+					email: req.body.email,
+					perfil: req.body.perfil,
+					active: req.body.active
+				})
+					.then(() => res.status(200).json(login))
+					.catch((error) => res.status(400).send(error));
+			}
+		)
+		.catch((error) => res.status(400).send(error));
 };
- 
+
 // Delete by Id
 exports.delete = (req, res) => {
-	return Bank
-		.findByPk(req.params.bankId)
-		.then(bank => {
-			if(!bank) {
+	return Login
+		.findByPk(req.params.loginId)
+		.then(login => {
+			if (!login) {
 				return res.status(400).send({
-					message: 'Bank Not Found',
+					message: 'Login Not Found',
 				});
 			}
 
-			return bank.destroy()
-				.then(() => res.status(200).json({message: "Destroy successfully!"}))
+			return login.destroy()
+				.then(() => res.status(200).json({ message: "Destroy successfully!" }))
 				.catch(error => res.status(400).send(error));
 		})
 		.catch(error => res.status(400).send(error));
