@@ -79,5 +79,7 @@ db.identifications.hasOne(db.customers, {foreignKey: 'fk_identificationid', targ
 db.customers.belongsTo(db.classcustomers, {foreignKey: 'fk_classcustomerid', targetKey: 'id'});
 db.classcustomers.hasOne(db.customers, {foreignKey: 'fk_classcustomerid', targetKey: 'id'});
 
+//
+//
 
 module.exports = db;
