@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
-  const Licensecountry =  sequelize.define('licensecountry', {
+module.exports = function (sequelize, Sequelize) {
+  const Licensecountry = sequelize.define('licensecountry', {
     // idlicense: {
     //   type: Sequelize.INTEGER(11),
     //   allowNull: false,

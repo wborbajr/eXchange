@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const City = sequelize.define('city', {
     // idcity: {
     //   type: Sequelize.INTEGER(10).UNSIGNED,
@@ -21,13 +21,13 @@ module.exports = function(sequelize, Sequelize) {
           msg: "Only letters allowed"
         },
         len: {
-          args: [4,40],
+          args: [4, 40],
           msg: "String length is not in this range {4,40}"
         },
         notNull: {
           args: true,
           msg: "String can not be null"
-        } 
+        }
       }
     }
   });

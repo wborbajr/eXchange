@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Customer = sequelize.define('customer', {
     // idcustomer: {
     //   type: Sequelize.INTEGER(11),
@@ -69,7 +69,7 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     comissionpercent: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },

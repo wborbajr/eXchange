@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Typeproduct = sequelize.define('typeproduct', {
     // idtypeproduct: {
     //   type: Sequelize.INTEGER(11),

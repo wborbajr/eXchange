@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Cashflow = sequelize.define('cashflow', {
     // uuid: {
     //   type: Sequelize.UUID,
@@ -74,17 +74,17 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     valueflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
     centsflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
     cents2flow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
@@ -93,22 +93,22 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     percentflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
     valuepercentflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
     airpercentflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
     aircomisvalue: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
@@ -121,7 +121,7 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     totalflow: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },
@@ -130,7 +130,7 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     totaltopay: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
       defaultValue: '0.00'
     },

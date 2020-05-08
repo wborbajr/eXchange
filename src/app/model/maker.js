@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Maker = sequelize.define('maker', {
     // idmaker: {
     //   type: Sequelize.INTEGER(11),

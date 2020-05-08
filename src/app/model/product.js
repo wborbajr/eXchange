@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Product = sequelize.define('product', {
     // idproduct: {
     //   type: Sequelize.INTEGER(11),
@@ -21,17 +21,17 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     },
     productvalue: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: false,
       defaultValue: '0.00'
     },
     percentcomis: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: false,
       defaultValue: '0.00'
     },
     percentchq: {
-      type: Sequelize.DOUBLE(10,2),
+      type: Sequelize.DOUBLE(10, 2),
       allowNull: false,
       defaultValue: '0.00'
     },

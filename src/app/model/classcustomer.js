@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Classcustomer = sequelize.define('classcustomer', {
     // idclasscustomer: {
     //   type: Sequelize.INTEGER(11),

@@ -2,28 +2,28 @@ const db = require('../config/db.config.js');
 const Classcustomer = db.classcustomers;
 
 // Post 
-exports.create = (req, res) => {	
+exports.create = (req, res) => {
 
 	// console.log(req.body);
 	// console.log(`Customer: ${Customer}`)
-	
+
 	// Save to MariaDB database
-	Classcustomer.create({  
-			description: req.body.description,
-			seeincompany: req.body.seeincompany
-		})
-		.then(classcustomer => {		
+	Classcustomer.create({
+		description: req.body.description,
+		seeincompany: req.body.seeincompany
+	})
+		.then(classcustomer => {
 			// Send created classcustomer to client
 			res.json(classcustomer);
 		})
 		.catch(error => res.status(400).send(error))
 };
- 
+
 // Fetch all 
 exports.findAll = (req, res) => {
 	Classcustomer.findAll({
-			attributes: { exclude: ["createdAt", "updatedAt"] }
-		})
+		attributes: { exclude: ["createdAt", "updatedAt"] }
+	})
 		.then(classcustomers => {
 			res.json(classcustomers);
 		})
@@ -31,19 +31,19 @@ exports.findAll = (req, res) => {
 };
 
 // Find by Id
-exports.findByPk = (req, res) => {  
-	
+exports.findByPk = (req, res) => {
+
 	// console.log(`Customer: ${Customer}`)
 
 	Classcustomer.findByPk(req.params.classcustomerId,
-		{attributes: { exclude: ["createdAt", "updatedAt"] }}
-		)
+		{ attributes: { exclude: ["createdAt", "updatedAt"] } }
+	)
 		.then(classcustomer => {
-			if (!classcustomer){
-				return res.status(404).json({message: "Class Customer Not Found"})
+			if (!classcustomer) {
+				return res.status(404).json({ message: "Class Customer Not Found" })
 			}
 			return res.status(200).json(classcustomer)
-		  }
+		}
 		)
 		.catch(error => res.status(400).send(error));
 };
@@ -53,35 +53,35 @@ exports.update = (req, res) => {
 	return Classcustomer.findByPk(req.params.classcustomerId)
 		.then(
 			classcustomer => {
-				if(!classcustomer){
+				if (!classcustomer) {
 					return res.status(404).json({
 						message: 'Class Customer Not Found',
 					});
 				}
 				return classcustomer.update({
-										description: req.body.description,
-										seeincompany: req.body.seeincompany
-									})
-									.then(() => res.status(200).json(customer))
-									.catch((error) => res.status(400).send(error));
-				}
-			)
-		.catch((error) => res.status(400).send(error));			 
+					description: req.body.description,
+					seeincompany: req.body.seeincompany
+				})
+					.then(() => res.status(200).json(customer))
+					.catch((error) => res.status(400).send(error));
+			}
+		)
+		.catch((error) => res.status(400).send(error));
 };
- 
+
 // Delete a by Id
 exports.delete = (req, res) => {
 	return Classcustomer
 		.findByPk(req.params.classcustomerId)
 		.then(classcustomer => {
-			if(!classcustomer) {
+			if (!classcustomer) {
 				return res.status(400).send({
 					message: 'Customer Not Found',
 				});
 			}
 
 			return classcustomer.destroy()
-				.then(() => res.status(200).json({message: "Destroy successfully!"}))
+				.then(() => res.status(200).json({ message: "Destroy successfully!" }))
 				.catch(error => res.status(400).send(error));
 		})
 		.catch(error => res.status(400).send(error));

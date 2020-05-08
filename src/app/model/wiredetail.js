@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
-  const Wiredetail =  sequelize.define('wiredetail', {
+module.exports = function (sequelize, Sequelize) {
+  const Wiredetail = sequelize.define('wiredetail', {
     wire_id: {
       type: Sequelize.INTEGER(11),
       allowNull: false,

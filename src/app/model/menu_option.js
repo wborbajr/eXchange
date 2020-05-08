@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Menu_option = sequelize.define('menu_option', {
     idmenu_options: {
       type: Sequelize.INTEGER(10).UNSIGNED,

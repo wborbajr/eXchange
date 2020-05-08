@@ -2,8 +2,8 @@
 
 // import bcrypt from 'bcryptjs';
 
-module.exports = function(sequelize, Sequelize) {
-  const  Login =  sequelize.define('login', {
+module.exports = function (sequelize, Sequelize) {
+  const Login = sequelize.define('login', {
     // idlogin: {
     //   type: Sequelize.INTEGER(10).UNSIGNED,
     //   allowNull: false,
@@ -23,7 +23,7 @@ module.exports = function(sequelize, Sequelize) {
     password: {
       type: Sequelize.STRING(80),
       allowNull: false
-      },
+    },
     name: {
       type: Sequelize.STRING(40),
       allowNull: true,
@@ -52,33 +52,33 @@ module.exports = function(sequelize, Sequelize) {
       allowNull: true
     }
   }
-  , {
-    instanceMethods: {
-      generateHash: function (password) {
-        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
-      },
-      validPassword: function (password) {
-        return bcrypt.compareSync(password, this.password)
+    , {
+      instanceMethods: {
+        generateHash: function (password) {
+          return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
+        },
+        validPassword: function (password) {
+          return bcrypt.compareSync(password, this.password)
+        }
       }
     }
-  }
-  
-  
-  
-  
-  
+
+
+
+
+
   );
 
   Login.beforeCreate((login, options) => {
 
     return bcrypt.hash(login.senha, 10)
-        .then(hash => {
-            login.senha = hash;
-        })
-        .catch(err => { 
-            throw new Error(); 
-        });
-});
+      .then(hash => {
+        login.senha = hash;
+      })
+      .catch(err => {
+        throw new Error();
+      });
+  });
 
   return Login;
 };

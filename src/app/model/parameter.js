@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Parameter = sequelize.define('parameter', {
     id_parameter: {
       type: Sequelize.INTEGER(10).UNSIGNED,

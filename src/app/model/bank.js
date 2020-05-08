@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Bank = sequelize.define('bank', {
     // idbank: {
     //   type: Sequelize.INTEGER(11),

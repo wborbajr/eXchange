@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, Sequelize) {
+module.exports = function (sequelize, Sequelize) {
   const Chartaccount = sequelize.define('chartaccount', {
     // idchartaccount: {
     //   type: Sequelize.INTEGER(11),
