@@ -22,16 +22,13 @@ module.exports = function (sequelize, Sequelize) {
     password: {
       type: Sequelize.STRING(100),
       allowNull: false,
+      len: [6, 20],
       set(value) {
-        // value = crypto.createHash("sha1").update(value, "binary").digest("hex");
-
-        // const salt = crypto.randomBytes(128).toString('base64');
-        // const hmac = crypto.createHmac('sha256', salt);
-        // this.setDataValue('password', hmac.update(value).digest('hex'));
 
         const salt = bcrypt.genSaltSync(9);
         const encrypted = bcrypt.hashSync(value, salt);
         this.setDataValue('password', encrypted);
+
       }
     },
     name: {

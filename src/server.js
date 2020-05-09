@@ -18,28 +18,24 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
-  genid: function (req) {
-    return genuuid(); // use UUIDs for session IDs
-  },
-  secret: 'keyboard cat',
-  saveUninitialized: true,
-  resave: true,
-  maxAge: 3600000, // 1 hour milis
-  cookie: {
-    maxAge: (1000 * 60 * 100)
-  }
-}))
-  ;
+app.use(
+  session({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'XCR3rsasa%RDHHH',
+    cookie: {
+      maxAge: (1000 * 60 * 100)
+    }
+  }));
 
 
 const db = require('./app/config/db.config.js');
 
 // force: true will drop the table if it already exists
 // TO-DO comment
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log('Drop and Resync with { force: true }');
-// });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log('Drop and Resync with { force: true }');
+});
 // TO-DO comment
 
 require('./app/route/customer.route.js')(app);
@@ -58,13 +54,13 @@ require('./app/route/menu.route.js')(app);
 require('./app/route/parameter.route.js')(app);
 require('./app/route/product.route.js')(app);
 require('./app/route/wiredetail.route.js')(app);
-require('./app/route/test.route.js')(app);
+require('./app/route/auth.route.js')(app);
 
 // Create a Server
-var server = app.listen(9090, function () {
+var server = app.listen(9090, "127.0.0.1", function () {
 
   var host = server.address().address
   var port = server.address().port
 
-  console.log("App listening at http://%s:%s", host, port)
+  console.log("eXchange Server listening at http://%s:%s", host, port)
 })
