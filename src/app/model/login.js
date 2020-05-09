@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-// import bcrypt from 'bcryptjs';
+const crypto = require('crypto')
 
 module.exports = function (sequelize, Sequelize) {
   const Login = sequelize.define('login', {
@@ -20,8 +20,12 @@ module.exports = function (sequelize, Sequelize) {
       }
     },
     password: {
-      type: Sequelize.STRING(80),
-      allowNull: false
+      type: Sequelize.STRING(100),
+      allowNull: false,
+      set(value) {
+        value = crypto.createHash("sha1").update(value, "binary").digest("hex");
+        this.setDataValue('password', value);
+      }
     },
     name: {
       type: Sequelize.STRING(40),

@@ -5,26 +5,18 @@ const Test = db.tests;
 exports.create = (req, res) => {
 
 	// console.log(`Request ==> ${req}`);
-	// console.log(JSON.parse(req.body.tostring));
-	// console.log(`Customer: ${Customer}`)
+
 
 	// Save to MariaDB database
-	Test.create(req.body)
+	Test.create(
+		req.body
+	)
 		.then(test => {
 			// Send created test to client
 			res.json(test);
 		})
 		.catch(error => res.status(400).send(error))
 
-	// Test.create({
-	// 	username: req.body.username,
-	// 	password: req.body.password
-	// })
-	// 	.then(test => {
-	// 		// Send created test to client
-	// 		res.json(test);
-	// 	})
-	// 	.catch(error => res.status(400).send(error))
 };
 
 // Fetch all 

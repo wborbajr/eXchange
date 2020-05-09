@@ -1,5 +1,9 @@
 /* jshint indent: 2 */
 
+const crypto = require('crypto')
+// var shasum = crypto.createHash('sha1')
+
+
 module.exports = function (sequelize, Sequelize) {
   const Test = sequelize.define('test', {
     uuid: {
@@ -17,18 +21,14 @@ module.exports = function (sequelize, Sequelize) {
     },
     password: {
       type: Sequelize.STRING(100),
-      allowNull: false
+      allowNull: false,
+      set(value) {
+        value = crypto.createHash("sha1").update(value, "binary").digest("hex");
+        this.setDataValue('password', value);
+      }
     },
 
   });
-
-
-  // Method 3 via the direct method
-  // Test.beforeCreate(async (test, options) => {
-  //   const hashedPassword = await hashPassword(test.password);
-  //   test.password = hashedPassword;
-  // });
-
 
   return Test
 }
