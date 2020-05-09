@@ -16,4 +16,8 @@ module.exports = function (app) {
 
     // Delete a with Id
     app.delete('/api/logins/:loginId', logins.delete);
+
+    // Create a new 
+    app.post('/api/logins/signin', logins.signin);
+
 }

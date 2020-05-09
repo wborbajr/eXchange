@@ -16,4 +16,9 @@ module.exports = function (app) {
 
     // Delete a with Id
     app.delete('/api/tests/:testId', tests.delete);
+
+    // Delete a with Id
+    app.post('/api/tests/login', tests.loginv3);
+
+
 }

@@ -81,3 +81,32 @@ exports.delete = (req, res) => {
 		})
 		.catch(error => res.status(400).send(error));
 };
+
+// Validate signin
+exports.signin = (req, res) => {
+
+	console.log("Sign-In");
+
+	Test.findOne({
+		where: {
+			username: req.body.username
+		}
+	}).then(result => {
+		if (!result) {
+			return res.status(404).send({ message: 'User Not Found.' });
+		}
+
+		const passwordIsValid = bcrypt.compare(req.body.password, result.password);
+
+		if (!passwordIsValid) {
+			return res.status(401).send({ auth: false, accessToken: null, reason: "Invalid Password!" });
+		}
+
+		const token = "1234";
+		res.status(200).send({ auth: true, accessToken: token });
+
+	}).catch(err => {
+		res.status(500).send('Error -> ' + err);
+	});
+
+};
