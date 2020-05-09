@@ -88,5 +88,4 @@ db.cashflows.hasOne(db.wiredetails, { foreignKey: 'fk_cashflowid', targetKey: 'i
 
 //
 //
-
 module.exports = db;
