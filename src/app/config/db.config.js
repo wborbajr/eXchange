@@ -79,6 +79,14 @@ db.customers.belongsTo(db.classcustomers, { foreignKey: 'fk_classcustomerid', ta
 db.classcustomers.hasOne(db.customers, { foreignKey: 'fk_classcustomerid', targetKey: 'id' });
 
 //
+// WireDetail - association
+db.wiredetails.belongsTo(db.cities, { foreignKey: 'fk_countryid', targetKey: 'id' });
+db.cities.hasOne(db.wiredetails, { foreignKey: 'fk_countryid', targetKey: 'id' });
+
+db.wiredetails.belongsTo(db.cashflows, { foreignKey: 'fk_cashflowid', targetKey: 'id' });
+db.cashflows.hasOne(db.wiredetails, { foreignKey: 'fk_cashflowid', targetKey: 'id' });
+
+//
 //
 
 module.exports = db;
