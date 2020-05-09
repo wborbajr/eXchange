@@ -37,7 +37,6 @@ db.parameters = require('../model/parameter.js')(sequelize, Sequelize);
 db.products = require('../model/product.js')(sequelize, Sequelize);
 db.typeproducts = require('../model/typeproduct.js')(sequelize, Sequelize);
 db.wiredetails = require('../model/wiredetail.js')(sequelize, Sequelize);
-db.tests = require('../model/test.js')(sequelize, Sequelize);
 
 //
 // Cash Flow - association
