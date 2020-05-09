@@ -5,9 +5,7 @@ const City = db.cities;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	City.create({
-		name_city: req.body.name_city
-	})
+	City.create(req.body)
 		.then(city => {
 			// Send created city to client
 			res.json(city);

@@ -2,20 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Wiredetail = sequelize.define('wiredetail', {
-    // wire_id: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
-    // fk_idcashflow: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // },
-    // fk_idcountry: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     qtdwire: {
       type: Sequelize.DOUBLE,
       allowNull: true

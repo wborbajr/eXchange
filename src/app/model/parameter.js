@@ -2,11 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Parameter = sequelize.define('parameter', {
-    // id_parameter: {
-    //   type: Sequelize.INTEGER(10).UNSIGNED,
-    //   allowNull: false,
-    //   primaryKey: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     client: {
       type: Sequelize.STRING(80),
       allowNull: true

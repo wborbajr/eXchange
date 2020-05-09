@@ -5,11 +5,7 @@ const Bank = db.banks;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Bank.create({
-		namebank: req.body.namebank,
-		agency: req.body.agency,
-		count: req.body.count
-	})
+	Bank.create(req.body)
 		.then(bank => {
 			// Send created bank to client
 			res.json(bank);

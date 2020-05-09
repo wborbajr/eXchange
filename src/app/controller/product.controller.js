@@ -5,16 +5,7 @@ const Product = db.products;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Product.create({
-		nameproduct: req.body.nameproduct,
-		amountproduct: req.body.amountproduct,
-		productvalue: req.body.productvalue,
-		percentcomis: req.body.percentcomis,
-		percentchq: req.body.percentchq,
-		rule: req.body.rule,
-		rmovetypele: req.body.movetype
-
-	})
+	Product.create(req.body)
 		.then(product => {
 			// Send created product to client
 			res.json(product);

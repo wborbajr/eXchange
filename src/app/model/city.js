@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const City = sequelize.define('city', {
-    // idcity: {
-    //   type: Sequelize.INTEGER(10).UNSIGNED,
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     name_city: {
       type: Sequelize.STRING(40),
       allowNull: false,

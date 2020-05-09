@@ -2,28 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Customer = sequelize.define('customer', {
-    // idcustomer: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
-    // fk_idcity: {
-    //   type: Sequelize.INTEGER(10).UNSIGNED,
-    //   allowNull: true
-    // },
-    // fk_ididentification: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // },
-    // fk_idcustomer: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // },
-    // fk_idclasscustomer: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     typecustomer: {
       type: Sequelize.INTEGER(11),
       allowNull: true

@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Chartaccount = sequelize.define('chartaccount', {
-    // idchartaccount: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     namechartaccount: {
       type: Sequelize.STRING(40),
       allowNull: true

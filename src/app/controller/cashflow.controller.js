@@ -5,35 +5,7 @@ const Cashflow = db.cashflows;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Cashflow.create({
-		customer_phone: req.body.customer_phone,
-		dtcashflow: req.body.dtcashflow,
-		tchaflow: req.body.tchaflow,
-		amountflow: req.body.amountflow,
-		valueflow: req.body.valueflow,
-		centsflow: req.body.centsflow,
-		cents2flow: req.body.cents2flow,
-		check_number: req.body.check_number,
-		percentflow: req.body.percentflow,
-		valuepercentflow: req.body.valuepercentflow,
-		airpercentflow: req.body.airpercentflow,
-		aircomisvalue: req.body.aircomisvalue,
-		airreservation: req.body.airreservation,
-		airdtemiuntil: req.body.airdtemiuntil,
-		totalflow: req.body.totalflow,
-		movetype: req.body.movetype,
-		totaltopay: req.body.totaltopay,
-		cashflowok: req.body.cashflowok,
-		cashflowobs: req.body.cashflowobs,
-		cashfloworigin: req.body.cashfloworigin,
-		wire: req.body.wire,
-		subtotalflow: req.body.subtotalflow,
-		idlogin: req.body.idlogin,
-		vin: req.body.vin,
-		year: req.body.year,
-		model: req.body.model,
-		description: req.body.description
-	})
+	Cashflow.create(req.body)
 		.then(cashflow => {
 			// Send created cashflow to client
 			res.json(cashflow);

@@ -5,9 +5,7 @@ const Typeproduct = db.typeproducts;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Typeproduct.create({
-		nametypeproduct: req.body.nametypeproduct
-	})
+	Typeproduct.create(req.body)
 		.then(typeproduct => {
 			// Send created typeproduct to client
 			res.json(typeproduct);

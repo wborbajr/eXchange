@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Bank = sequelize.define('bank', {
-    // idbank: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     namebank: {
       type: Sequelize.STRING(50),
       allowNull: false

@@ -8,10 +8,7 @@ exports.create = (req, res) => {
 	// console.log(`Customer: ${Customer}`)
 
 	// Save to MariaDB database
-	Classcustomer.create({
-		description: req.body.description,
-		seeincompany: req.body.seeincompany
-	})
+	Classcustomer.create(req.body)
 		.then(classcustomer => {
 			// Send created classcustomer to client
 			res.json(classcustomer);

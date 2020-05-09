@@ -5,14 +5,7 @@ const Login = db.logins;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Login.create({
-		username: req.body.username,
-		password: req.body.password,
-		name: req.body.name,
-		email: req.body.email,
-		perfil: req.body.perfil,
-		active: req.body.active
-	})
+	Login.create(req.body)
 		.then(login => {
 			// Send created login to client
 			res.json(login);

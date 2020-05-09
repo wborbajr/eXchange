@@ -4,12 +4,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Login = sequelize.define('login', {
-    // idlogin: {
-    //   type: Sequelize.INTEGER(10).UNSIGNED,
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     username: {
       type: Sequelize.STRING(40),
       allowNull: false,

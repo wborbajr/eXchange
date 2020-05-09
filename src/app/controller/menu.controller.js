@@ -5,14 +5,7 @@ const Menu = db.menus;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Menu.create({
-		menu: req.body.menu,
-		menu_description: req.body.menu_description,
-		path: req.body.path,
-		sub_menu: req.body.sub_menu,
-		seq: req.body.seq
-
-	})
+	Menu.create(req.body)
 		.then(menu => {
 			// Send created menu to client
 			res.json(menu);

@@ -2,11 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Typeproduct = sequelize.define('typeproduct', {
-    // idtypeproduct: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     nametypeproduct: {
       type: Sequelize.STRING(50),
       allowNull: true

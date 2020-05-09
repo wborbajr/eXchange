@@ -5,7 +5,7 @@ const Customer = db.customers;
 exports.create = (req, res) => {
 
 	// console.log(req.body);
-	console.log(`Customer: ${Customer}`)
+	// console.log(`Customer: ${Customer}`)
 
 	// Save to MariaDB database
 	Customer.create({

@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Coverage = sequelize.define('coverage', {
-    // idcoverage: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     namecoverage: {
       type: Sequelize.STRING(20),
       allowNull: true

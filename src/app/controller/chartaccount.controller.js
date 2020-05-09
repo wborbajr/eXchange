@@ -5,10 +5,7 @@ const Chartaccount = db.chartaccounts;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Chartaccount.create({
-		namechartaccount: req.body.namechartaccount,
-		io: req.body.io
-	})
+	Chartaccount.create(req.body)
 		.then(chartaccount => {
 			// Send created chartaccount to client
 			res.json(chartaccount);

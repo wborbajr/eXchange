@@ -5,9 +5,7 @@ const Licensecountry = db.licensecountries;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Licensecountry.create({
-		namelicense: req.body.namelicense
-	})
+	Licensecountry.create(req.body)
 		.then(licensecountry => {
 			// Send created licensecountry to client
 			res.json(licensecountry);

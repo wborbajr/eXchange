@@ -5,9 +5,7 @@ const Maker = db.makers;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Maker.create({
-		namemaker: req.body.namemaker
-	})
+	Maker.create(req.body)
 		.then(maker => {
 			// Send created maker to client
 			res.json(maker);

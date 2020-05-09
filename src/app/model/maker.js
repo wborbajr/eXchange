@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Maker = sequelize.define('maker', {
-    // idmaker: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     namemaker: {
       type: Sequelize.STRING(30),
       allowNull: false

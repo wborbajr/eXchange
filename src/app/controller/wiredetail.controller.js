@@ -5,9 +5,7 @@ const Wiredetail = db.wiredetails;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Wiredetail.create({
-		qtdwire: req.body.qtdwire
-	})
+	Wiredetail.create(req.body)
 		.then(wiredetail => {
 			// Send created wiredetail to client
 			res.json(wiredetail);

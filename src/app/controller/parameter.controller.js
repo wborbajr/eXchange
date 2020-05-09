@@ -5,13 +5,7 @@ const Parameter = db.parameters;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Parameter.create({
-		client: req.body.client,
-		exchange_vl_month: req.body.exchange_vl_month,
-		exchange_vl_year: req.body.exchange_vl_year,
-		exchange_vl_wire: req.body.exchange_vl_wire,
-		exchange_comission: req.body.exchange_comission
-	})
+	Parameter.create(req.body)
 		.then(parameter => {
 			// Send created parameter to client
 			res.json(parameter);

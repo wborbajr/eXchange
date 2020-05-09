@@ -5,9 +5,7 @@ const Identification = db.identifications;
 exports.create = (req, res) => {
 
 	// Save to MariaDB database
-	Identification.create({
-		nameidentification: req.body.nameidentification
-	})
+	Identification.create(req.body)
 		.then(identification => {
 			// Send created identification to client
 			res.json(identification);

@@ -2,12 +2,11 @@
 
 module.exports = function (sequelize, Sequelize) {
   const Identification = sequelize.define('identification', {
-    // ididentification: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    uuid: {
+      // primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV1
+    },
     nameidentification: {
       type: Sequelize.STRING(100),
       allowNull: true
