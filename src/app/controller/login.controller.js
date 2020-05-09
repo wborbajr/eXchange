@@ -84,7 +84,6 @@ exports.delete = (req, res) => {
 
 // Validate signin
 exports.signin = (req, res) => {
-
 	console.log("Sign-In");
 
 	Test.findOne({
@@ -96,7 +95,7 @@ exports.signin = (req, res) => {
 			return res.status(404).send({ message: 'User Not Found.' });
 		}
 
-		const passwordIsValid = bcrypt.compare(req.body.password, result.password);
+		const passwordIsValid = bcrypt.compareSync(req.body.password, result.password);
 
 		if (!passwordIsValid) {
 			return res.status(401).send({ auth: false, accessToken: null, reason: "Invalid Password!" });

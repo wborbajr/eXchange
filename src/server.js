@@ -1,15 +1,45 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json())
+const express = require('express');
+const session = require('express-session');
+const app = express();
+const bodyParser = require('body-parser');
+
+// app.use(
+//   bodyParser.json(),
+//   session({
+//     secret: cookie_secret,
+//     name: cookie_name,
+//     store: sessionStore, // connect-mongo session store
+//     proxy: true,
+//     resave: true,
+//     saveUninitialized: true
+//   })
+// );
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+  genid: function (req) {
+    return genuuid(); // use UUIDs for session IDs
+  },
+  secret: 'keyboard cat',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 3600000, // 1 hour milis
+  cookie: {
+    maxAge: (1000 * 60 * 100)
+  }
+}))
+  ;
+
 
 const db = require('./app/config/db.config.js');
 
 // force: true will drop the table if it already exists
 // TO-DO comment
-db.sequelize.sync({ force: true }).then(() => {
-  console.log('Drop and Resync with { force: true }');
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log('Drop and Resync with { force: true }');
+// });
 // TO-DO comment
 
 require('./app/route/customer.route.js')(app);

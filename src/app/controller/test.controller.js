@@ -124,41 +124,11 @@ exports.loginv2 = (req, res) => {
 	});
 };
 
-// Validate Login - v3
-// exports.loginv3 = (req, res) => {
-
-// 	Test.findOne({
-// 		where: {
-// 			username: req.body.username
-// 		}
-// 	}).then(function (username) {
-// 		if (!username) {
-// 			return res.status(400).send({
-// 				message: 'Username or Password Not Found',
-// 			});
-// 		} else {
-// 			bcrypt.compareSync(req.body.password, tests.password, function (err, result) {
-// 				if (result == true) {
-// 					return res.status(200).send({
-// 						message: 'Logged in',
-// 					});
-
-// 				} else {
-// 					return res.status(400).send({
-// 						message: 'Fuck you baby',
-// 					});
-
-// 				}
-// 			}); //bcrypt
-
-// 		}
-// 	});
-
-// };
-
 exports.loginv3 = (req, res) => {
 
 	console.log("Sign-In");
+
+	const vsession = req.session;
 
 	Test.findOne({
 		where: {
@@ -171,17 +141,33 @@ exports.loginv3 = (req, res) => {
 		console.log(`PWD DO BANCO ${result.password}`);
 		console.log(`PWD DO PSTMA ${req.body.password}`);
 
-		const passwordIsValid = bcrypt.compare(req.body.password, result.password);
+		const passwordIsValid = bcrypt.compareSync(req.body.password, result.password);
+		console.log(`passwordIsValid ${passwordIsValid}`);
+
 
 		if (!passwordIsValid) {
 			return res.status(401).send({ auth: false, accessToken: null, reason: "Invalid Password!" });
 		}
 
-		const token = "1234";
+		// Generate token and sendo to user
+		const token = genuuid();;
+		vsession.token;
+
 		res.status(200).send({ auth: true, accessToken: token });
 
 	}).catch(err => {
 		res.status(500).send('Error -> ' + err);
+	});
+
+};
+
+
+exports.logout = (req, res) => {
+	req.session.destroy((err) => {
+		if (err) {
+			return console.log(err);
+		}
+		res.redirect('/');
 	});
 
 };
