@@ -57,7 +57,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\n    \"name\": \"Um nome\",\n    \"andress\": \"req.body.andress\",\n    \"phone\": \"req.body.phone\",\n    \"phone2\": \"req.body.phone2\",\n    \"zipcode\": \"req.body.zipcode\",\n    \"city\": \"req.body.city\",\n    \"state\": \"req.body.state\",\n    \"email\": \"req.body.email\",\n    \"dtbirth\": \"2020-01-01\",\n    \"numidentification\": \"req.body.numidentification\",\n    \"comissionpercent\": \"2.99\",\n    \"attention\": \"req.body.attention\",\n    \"picture_path\": \"req.body.picture_path\",\n    \"active\": \"1\",\n    \"restriction\": 0\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -875,7 +875,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"req.namelicense\",\n    \"seeincompany\":\"1\"\n}",
+					"raw": "{\n    \"description\": \"WOWOWOWOOWOW\",\n    \"seeincompany\":\"1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -883,7 +883,7 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:9090/api/classcustomers/3",
+					"raw": "127.0.0.1:9090/api/classcustomers/4",
 					"host": [
 						"127",
 						"0",
@@ -894,7 +894,7 @@
 					"path": [
 						"api",
 						"classcustomers",
-						"3"
+						"4"
 					]
 				}
 			},
@@ -1439,6 +1439,225 @@
 					"path": [
 						"api",
 						"menus",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/parameters/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client\": \"req.body.client\",\n    \"exchange_vl_month\": \"req.body.exchange_vl_month\",\n    \"exchange_vl_year\": \"req.body.exchange_vl_year\",\n    \"exchange_vl_wire\": \"req.body.exchange_vl_wire\",\n    \"exchange_comission\": \"req.body.exchange_comission\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/parameters/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"parameters",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/parameters/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/parameters/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"parameters",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/parameters/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/parameters/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"parameters",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/parameters/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client\": \"req.body.client\",\n    \"exchange_vl_month\": \"2.88\",\n    \"exchange_vl_year\": \"3.77\",\n    \"exchange_vl_wire\": \"2.56\",\n    \"exchange_comission\": \"1.00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/parameters/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"parameters",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/products",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/products/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nameproduct\": \"req.body.nameproduct\",\n    \"amountproduct\": \"3\",\n    \"productvalue\": \"1\",\n    \"percentcomis\": \"2\",\n    \"rule\": \"0\",\n    \"movetypele\": \"r\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/products/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/products/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nameproduct\": \"req.body.daadadadae\",\n    \"amountproduct\": \"3\",\n    \"productvalue\": \"1\",\n    \"percentcomis\": \"2\",\n    \"rule\": \"0\",\n    \"movetypele\": \"r\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/products/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/products/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/products/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"products",
 						"2"
 					]
 				}
