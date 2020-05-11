@@ -1147,7 +1147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"namechartaccount\": \"123,\",\n    \"io\": \"2\"\n}",
+					"raw": "{\n    \"username\": \"juba\",\n    \"password\": \"123mudar\",\n    \"name\": \"req.body.name\",\n    \"email\": \"email@req.body.email\",\n    \"perfil\": \"1\",\n    \"active\": \"1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1745,6 +1745,61 @@
 						"api",
 						"wiredetails",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"junior\",\n    \"password\": \"123mudar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:9090/api/auth/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:9090/api/auth/logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:9090/api/auth/logout",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"logout"
 					]
 				}
 			},
