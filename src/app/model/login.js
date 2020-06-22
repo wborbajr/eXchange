@@ -1,13 +1,13 @@
 /* jshint indent: 2 */
 
-const bcrypt = require('bcryptjs')
+const bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, Sequelize) {
-  const Login = sequelize.define('login', {
+  const Login = sequelize.define("login", {
     uuid: {
       // primaryKey: true,
       type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV1
+      defaultValue: Sequelize.UUIDV1,
     },
     username: {
       type: Sequelize.STRING(40),
@@ -15,21 +15,19 @@ module.exports = function (sequelize, Sequelize) {
       validate: {
         len: {
           args: [0, 40],
-          msg: 'Username must be maximum length 40 characters'
-        }
-      }
+          msg: "Username must be maximum length 40 characters",
+        },
+      },
     },
     password: {
       type: Sequelize.STRING(100),
       allowNull: false,
       len: [6, 20],
       set(value) {
-
         const salt = bcrypt.genSaltSync(9);
         const encrypted = bcrypt.hashSync(value, salt);
-        this.setDataValue('password', encrypted);
-
-      }
+        this.setDataValue("password", encrypted);
+      },
     },
     name: {
       type: Sequelize.STRING(40),
@@ -37,29 +35,28 @@ module.exports = function (sequelize, Sequelize) {
       validate: {
         len: {
           args: [0, 40],
-          msg: 'Name must be maximum length 40 characters'
-        }
-      }
+          msg: "Name must be maximum length 40 characters",
+        },
+      },
     },
     email: {
       type: Sequelize.STRING(40),
       allowNull: true,
       validate: {
         isEmail: {
-          msg: 'Not a valid email.'
-        }
-      }
+          msg: "Not a valid email.",
+        },
+      },
     },
     perfil: {
       type: Sequelize.CHAR(1),
-      allowNull: true
+      allowNull: true,
     },
     active: {
       type: Sequelize.CHAR(1),
-      allowNull: true
-    }
+      allowNull: true,
+    },
   });
-
 
   return Login;
 };

@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, Sequelize) {
-  const City = sequelize.define('city', {
+  const City = sequelize.define("city", {
     uuid: {
       // primaryKey: true,
       type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV1
+      defaultValue: Sequelize.UUIDV1,
     },
     name_city: {
       type: Sequelize.STRING(40),
@@ -13,23 +13,23 @@ module.exports = function (sequelize, Sequelize) {
       validate: {
         notEmpty: {
           args: true,
-          msg: "Field is required"
+          msg: "Field is required",
         },
         is: {
-          args: ["^[a-z]+$", 'i'],
-          msg: "Only letters allowed"
+          args: ["^[a-z]+$", "i"],
+          msg: "Only letters allowed",
         },
         len: {
           args: [4, 40],
-          msg: "String length is not in this range {4,40}"
+          msg: "String length is not in this range {4,40}",
         },
         notNull: {
           args: true,
-          msg: "String can not be null"
-        }
-      }
-    }
+          msg: "String can not be null",
+        },
+      },
+    },
   });
 
-  return City
+  return City;
 };

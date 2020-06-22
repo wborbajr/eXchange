@@ -1,15 +1,15 @@
 const env = {
-  database: 'exchange',
-  username: 'exchange',
-  password: 'exchange',
-  host: '192.168.64.2',
-  dialect: 'mysql',
+  database: "exchange",
+  username: "exchange",
+  password: "exchange",
+  host: "127.0.0.1",
+  dialect: "mysql",
   pool: {
     max: 5,
     min: 0,
     acquire: 30000,
-    idle: 10000
-  }
+    idle: 10000,
+  },
 };
 
 module.exports = env;

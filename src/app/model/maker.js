@@ -1,16 +1,16 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, Sequelize) {
-  const Maker = sequelize.define('maker', {
+  const Maker = sequelize.define("maker", {
     uuid: {
       // primaryKey: true,
       type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV1
+      defaultValue: Sequelize.UUIDV1,
     },
     namemaker: {
       type: Sequelize.STRING(30),
-      allowNull: false
-    }
+      allowNull: false,
+    },
   });
 
   return Maker;

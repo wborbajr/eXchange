@@ -1,35 +1,35 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, Sequelize) {
-  const Customer = sequelize.define('customer', {
+  const Customer = sequelize.define("customer", {
     uuid: {
       // primaryKey: true,
       type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV1
+      defaultValue: Sequelize.UUIDV1,
     },
     typecustomer: {
       type: Sequelize.INTEGER(11),
-      allowNull: true
+      allowNull: true,
     },
     name: {
       type: Sequelize.STRING(40),
-      allowNull: false
+      allowNull: false,
     },
     andress: {
       type: Sequelize.STRING(100),
-      allowNull: true
+      allowNull: true,
     },
     phone: {
       type: Sequelize.STRING(20),
-      allowNull: true
+      allowNull: true,
     },
     phone2: {
       type: Sequelize.STRING(20),
-      allowNull: true
+      allowNull: true,
     },
     zipcode: {
       type: Sequelize.STRING(20),
-      allowNull: true
+      allowNull: true,
     },
     // city: {
     //   type: Sequelize.STRING(40),
@@ -37,43 +37,42 @@ module.exports = function (sequelize, Sequelize) {
     // },
     state: {
       type: Sequelize.STRING(40),
-      allowNull: true
+      allowNull: true,
     },
     email: {
       type: Sequelize.STRING(100),
-      allowNull: true
+      allowNull: true,
     },
     dtbirth: {
       type: Sequelize.DATEONLY,
-      allowNull: true
+      allowNull: true,
     },
     numidentification: {
       type: Sequelize.STRING(50),
-      allowNull: true
+      allowNull: true,
     },
     comissionpercent: {
       type: Sequelize.DOUBLE(10, 2),
       allowNull: true,
-      defaultValue: '0.00'
+      defaultValue: "0.00",
     },
     attention: {
       type: Sequelize.CHAR(250),
-      allowNull: true
+      allowNull: true,
     },
     picture_path: {
       type: Sequelize.STRING(200),
-      allowNull: true
+      allowNull: true,
     },
     active: {
       type: Sequelize.CHAR(1),
-      allowNull: true
+      allowNull: true,
     },
     restriction: {
       type: Sequelize.INTEGER(1),
-      allowNull: true
-    }
-
+      allowNull: true,
+    },
   });
 
-  return Customer
-}
+  return Customer;
+};
