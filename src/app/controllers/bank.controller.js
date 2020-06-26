@@ -76,3 +76,11 @@ exports.delete = (req, res) => {
     })
     .catch((error) => res.status(400).send(error));
 };
+
+// module.exports = {
+//   createbank: createbank,
+//   deletebank: deletebank,
+//   getpolls: getpolls,
+//   endpoll: endpoll,
+//   wildcard: wildcard,
+// };
