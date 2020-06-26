@@ -45,10 +45,9 @@ app.use(
 // TODO: comment
 // const run = async () => {};
 
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and Resync with { force: true }");
-//   run();
-// });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and Resync with { force: true }");
+});
 // TODO: comment
 
 require("./app/route/customer.route.js")(app);

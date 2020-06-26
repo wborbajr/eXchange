@@ -21,18 +21,14 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.STRING(15),
         allowNull: false,
       },
-      // createdAt: {
-      //   type: "TIMESTAMP",
-      //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-      //   allowNull: false,
-      // },
-      // updatedAt: {
-      //   type: "TIMESTAMP",
-      //   defaultValue: Sequelize.literal(
-      //     "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
-      //   ),
-      //   allowNull: false,
-      // },
+      createdAt: {
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      },
+      updatedAt: {
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      },
     },
     {
       engine: "InnoDB",
@@ -43,8 +39,8 @@ module.exports = function (sequelize, Sequelize) {
       tableName: "t_bank",
       paranoid: true,
       underscored: true,
-      createdAt: "created",
-      updatedAt: "modified",
+      // createdAt: "created",
+      // updatedAt: "modified",
     }
   );
 

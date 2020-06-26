@@ -74,18 +74,14 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.INTEGER(1),
         allowNull: true,
       },
-      // createdAt: {
-      //   type: "TIMESTAMP(3)",
-      //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
-      //   allowNull: false,
-      // },
-      // updatedAt: {
-      //   type: "TIMESTAMP(3)",
-      //   defaultValue: Sequelize.literal(
-      //     "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
-      //   ),
-      //   allowNull: false,
-      // },
+      createdAt: {
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      },
+      updatedAt: {
+        type: Sequelize.DATE(3),
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      },
     },
     {
       engine: "InnoDB",
@@ -96,8 +92,8 @@ module.exports = function (sequelize, Sequelize) {
       timestamps: true,
       paranoid: true,
       underscored: true,
-      createdAt: "created",
-      updatedAt: "modified",
+      // createdAt: "created",
+      // updatedAt: "modified",
     }
   );
   return Customer;
