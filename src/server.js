@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const db = require("./app/models");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
@@ -42,10 +43,12 @@ app.use(
 
 // force: true will drop the table if it already exists
 // TODO: comment
-const db = require("./app/models");
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and Resync with { force: true }");
-});
+// const run = async () => {};
+
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and Resync with { force: true }");
+//   run();
+// });
 // TODO: comment
 
 require("./app/route/customer.route.js")(app);
