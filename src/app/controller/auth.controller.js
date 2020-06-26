@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const uuid = require("uuid");
 
-const db = require("../model");
+const db = require("../models");
 
 const Login = db.logins;
 

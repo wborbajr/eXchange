@@ -1,4 +1,4 @@
-const db = require("../model");
+const db = require("../models");
 const Product = db.products;
 
 // Post a

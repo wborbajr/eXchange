@@ -1,4 +1,4 @@
-const db = require("../model");
+const db = require("../models");
 const Cashflow = db.cashflows;
 
 // Post a
