@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const parameters = require("../controller/parameter.controller.js");
+  const parameters = require("../controllers/parameter.controller.js");
 
   // Create a new
   app.post("/api/parameters/create", parameters.create);

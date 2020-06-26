@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const typeproducts = require("../controller/typeproduct.controller.js");
+  const typeproducts = require("../controllers/typeproduct.controller.js");
 
   // Create a new
   app.post("/api/typeproducts/create", typeproducts.create);

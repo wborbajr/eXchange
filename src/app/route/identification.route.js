@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const identification = require("../controller/identification.controller.js");
+  const identification = require("../controllers/identification.controller.js");
 
   // Create a new
   app.post("/api/identifications/create", identification.create);

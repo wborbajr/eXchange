@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const banks = require("../controller/bank.controller.js");
+  const banks = require("../controllers/bank.controller.js");
 
   // Create a new
   app.post("/api/banks/create", banks.create);

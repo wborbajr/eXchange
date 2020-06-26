@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const coverages = require("../controller/coverage.controller.js");
+  const coverages = require("../controllers/coverage.controller.js");
 
   // Create a new
   app.post("/api/coverages/create", coverages.create);

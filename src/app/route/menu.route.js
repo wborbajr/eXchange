@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const menus = require("../controller/menu.controller.js");
+  const menus = require("../controllers/menu.controller.js");
 
   // Create a new
   app.post("/api/menus/create", menus.create);

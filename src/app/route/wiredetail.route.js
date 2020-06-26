@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const wiredetails = require("../controller/wiredetail.controller.js");
+  const wiredetails = require("../controllers/wiredetail.controller.js");
 
   // Create a new
   app.post("/api/wiredetails/create", wiredetails.create);

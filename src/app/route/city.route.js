@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const cities = require("../controller/city.controller.js");
+  const cities = require("../controllers/city.controller.js");
 
   // Create a new
   app.post("/api/cities/create", cities.create);

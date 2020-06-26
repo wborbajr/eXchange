@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const licensecountries = require("../controller/licensecountry.controller.js");
+  const licensecountries = require("../controllers/licensecountry.controller.js");
 
   // Create a new
   app.post("/api/licensecountries/create", licensecountries.create);

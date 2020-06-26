@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const makers = require("../controller/maker.controller.js");
+  const makers = require("../controllers/maker.controller.js");
 
   // Create a new
   app.post("/api/makers/create", makers.create);

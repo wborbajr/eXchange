@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const cashflows = require("../controller/cashflow.controller.js");
+  const cashflows = require("../controllers/cashflow.controller.js");
 
   // Create a new
   app.post("/api/cashflows/create", cashflows.create);

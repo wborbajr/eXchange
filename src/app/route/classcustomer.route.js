@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  const classcustomers = require("../controller/classcustomer.controller.js");
+  const classcustomers = require("../controllers/classcustomer.controller.js");
 
   // Create a new
   app.post("/api/classcustomers/create", classcustomers.create);
