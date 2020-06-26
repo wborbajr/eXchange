@@ -3,11 +3,17 @@ const session = require("express-session");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const morgan = require("morgan");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
 const app = express();
+
+// Logging
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 const PORT = process.env.PORT || 9090;
 

@@ -31,24 +31,31 @@ module.exports = function (sequelize, Sequelize) {
           },
         },
       },
-      createdAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
-        allowNull: false,
-      },
-      updatedAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal(
-          "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
-        ),
-        allowNull: false,
-      },
+      // createdAt: {
+      //   type: "TIMESTAMP(3)",
+      //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      //   allowNull: false,
+      // },
+      // updatedAt: {
+      //   type: "TIMESTAMP(3)",
+      //   defaultValue: Sequelize.literal(
+      //     "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
+      //   ),
+      //   allowNull: false,
+      // },
     },
     {
       engine: "InnoDB",
       charset: "utf8",
     },
-    { tableName: "t_city", paranoid: true }
+    {
+      tableName: "t_city",
+      timestamps: true,
+      paranoid: true,
+      underscored: true,
+      createdAt: "created",
+      updatedAt: "modified",
+    }
   );
 
   return City;

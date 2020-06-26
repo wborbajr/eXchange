@@ -13,24 +13,31 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.DOUBLE,
         allowNull: true,
       },
-      createdAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
-        allowNull: false,
-      },
-      updatedAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal(
-          "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
-        ),
-        allowNull: false,
-      },
+      // createdAt: {
+      //   type: "TIMESTAMP(3)",
+      //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+      //   allowNull: false,
+      // },
+      // updatedAt: {
+      //   type: "TIMESTAMP(3)",
+      //   defaultValue: Sequelize.literal(
+      //     "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
+      //   ),
+      //   allowNull: false,
+      // },
     },
     {
       engine: "InnoDB",
       charset: "utf8",
     },
-    { tableName: "t_wiredetail", paranoid: true }
+    {
+      tableName: "t_wiredetail",
+      timestamps: true,
+      paranoid: true,
+      underscored: true,
+      createdAt: "created",
+      updatedAt: "modified",
+    }
   );
 
   return Wiredetail;

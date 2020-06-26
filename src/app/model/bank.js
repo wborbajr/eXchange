@@ -21,24 +21,31 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.STRING(15),
         allowNull: false,
       },
-      createdAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
-        allowNull: false,
-      },
-      updatedAt: {
-        type: "TIMESTAMP(3)",
-        defaultValue: Sequelize.literal(
-          "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
-        ),
-        allowNull: false,
-      },
+      // createdAt: {
+      //   type: "TIMESTAMP",
+      //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+      //   allowNull: false,
+      // },
+      // updatedAt: {
+      //   type: "TIMESTAMP",
+      //   defaultValue: Sequelize.literal(
+      //     "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+      //   ),
+      //   allowNull: false,
+      // },
     },
     {
       engine: "InnoDB",
       charset: "utf8",
     },
-    { tableName: "t_bank", paranoid: true }
+    {
+      timestamps: true,
+      tableName: "t_bank",
+      paranoid: true,
+      underscored: true,
+      createdAt: "created",
+      updatedAt: "modified",
+    }
   );
 
   return Bank;
@@ -50,3 +57,9 @@ module.exports = function (sequelize, Sequelize) {
 //   `stamp_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
 //   PRIMARY KEY (`id`)
 // ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+// INSERT INTO test_table
+// (name)
+// VALUES
+// ('jacur')
+// ON DUPLICATE KEY UPDATE NAME='sanfona';
