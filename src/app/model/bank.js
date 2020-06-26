@@ -50,16 +50,3 @@ module.exports = function (sequelize, Sequelize) {
 
   return Bank;
 };
-
-// CREATE TABLE `test_table` (
-//   `id` int(11) NOT NULL AUTO_INCREMENT,
-//   `stamp_created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-//   `stamp_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-//   PRIMARY KEY (`id`)
-// ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
-// INSERT INTO test_table
-// (name)
-// VALUES
-// ('jacur')
-// ON DUPLICATE KEY UPDATE NAME='sanfona';
