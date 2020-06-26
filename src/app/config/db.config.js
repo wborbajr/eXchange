@@ -94,14 +94,23 @@ db.banks.hasMany(db.cashflows, {
   targetKey: "id",
 });
 
-db.cashflows.belongsTo(db.cities, { foreignKey: "fk_cityid", targetKey: "id" });
-db.cities.hasMany(db.cashflows, { foreignKey: "fk_cityid", targetKey: "id" });
+db.cashflows.belongsTo(db.cities, {
+  foreignKey: "fk_cityid",
+  targetKey: "id",
+});
+db.cities.hasMany(db.cashflows, {
+  foreignKey: "fk_cityid",
+  targetKey: "id",
+});
 
 db.cashflows.belongsTo(db.makers, {
   foreignKey: "fk_makerid",
   targetKey: "id",
 });
-db.makers.hasMany(db.cashflows, { foreignKey: "fk_makerid", targetKey: "id" });
+db.makers.hasMany(db.cashflows, {
+  foreignKey: "fk_makerid",
+  targetKey: "id",
+});
 
 db.cashflows.belongsTo(db.coverages, {
   foreignKey: "fk_coverageid",
@@ -123,8 +132,14 @@ db.chartaccounts.hasMany(db.cashflows, {
 
 //
 // Customer - association
-db.customers.belongsTo(db.cities, { foreignKey: "fk_cityid", targetKey: "id" });
-db.cities.hasOne(db.customers, { foreignKey: "fk_cityid", targetKey: "id" });
+db.customers.belongsTo(db.cities, {
+  foreignKey: "fk_cityid",
+  targetKey: "id",
+});
+db.cities.hasOne(db.customers, {
+  foreignKey: "fk_cityid",
+  targetKey: "id",
+});
 
 db.customers.belongsTo(db.identifications, {
   foreignKey: "fk_identificationid",
