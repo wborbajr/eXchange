@@ -42,7 +42,7 @@ app.use(
 
 // force: true will drop the table if it already exists
 // TODO: comment
-const db = require("./app/config/db.config.js");
+const db = require("./app/model");
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and Resync with { force: true }");
 });

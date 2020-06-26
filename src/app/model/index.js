@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const env = require("./env.js");
+const env = require("../config/env.js");
 
 // const db = require("./db.js");
 
@@ -24,28 +24,22 @@ db.sequelize = sequelize;
 
 //
 //Models/tables
-db.banks = require("../model/bank.js")(sequelize, Sequelize);
-db.cashflows = require("../model/cashflow.js")(sequelize, Sequelize);
-db.chartaccounts = require("../model/chartaccount.js")(sequelize, Sequelize);
-db.cities = require("../model/city.js")(sequelize, Sequelize);
-db.classcustomers = require("../model/classcustomer.js")(sequelize, Sequelize);
-db.coverages = require("../model/coverage.js")(sequelize, Sequelize);
-db.customers = require("../model/customer.js")(sequelize, Sequelize);
-db.identifications = require("../model/identification.js")(
-  sequelize,
-  Sequelize
-);
-db.licensecountries = require("../model/licensecountry.js")(
-  sequelize,
-  Sequelize
-);
-db.logins = require("../model/login.js")(sequelize, Sequelize);
-db.makers = require("../model/maker.js")(sequelize, Sequelize);
-db.menus = require("../model/menu.js")(sequelize, Sequelize);
-db.parameters = require("../model/parameter.js")(sequelize, Sequelize);
-db.products = require("../model/product.js")(sequelize, Sequelize);
-db.typeproducts = require("../model/typeproduct.js")(sequelize, Sequelize);
-db.wiredetails = require("../model/wiredetail.js")(sequelize, Sequelize);
+db.banks = require("./bank.js")(sequelize, Sequelize);
+db.cashflows = require("./cashflow.js")(sequelize, Sequelize);
+db.chartaccounts = require("./chartaccount.js")(sequelize, Sequelize);
+db.cities = require("./city.js")(sequelize, Sequelize);
+db.classcustomers = require("./classcustomer.js")(sequelize, Sequelize);
+db.coverages = require("./coverage.js")(sequelize, Sequelize);
+db.customers = require("./customer.js")(sequelize, Sequelize);
+db.identifications = require("./identification.js")(sequelize, Sequelize);
+db.licensecountries = require("./licensecountry.js")(sequelize, Sequelize);
+db.logins = require("./login.js")(sequelize, Sequelize);
+db.makers = require("./maker.js")(sequelize, Sequelize);
+db.menus = require("./menu.js")(sequelize, Sequelize);
+db.parameters = require("./parameter.js")(sequelize, Sequelize);
+db.products = require("./product.js")(sequelize, Sequelize);
+db.typeproducts = require("./typeproduct.js")(sequelize, Sequelize);
+db.wiredetails = require("./wiredetail.js")(sequelize, Sequelize);
 
 //
 // Cash Flow - association

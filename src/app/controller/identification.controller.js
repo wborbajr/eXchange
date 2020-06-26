@@ -1,4 +1,4 @@
-const db = require("../config/db.config.js");
+const db = require("../model");
 const Identification = db.identifications;
 
 // Post a

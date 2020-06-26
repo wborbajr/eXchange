@@ -1,4 +1,4 @@
-const db = require("../config/db.config.js");
+const db = require("../model");
 const Coverage = db.coverages;
 
 // Post a

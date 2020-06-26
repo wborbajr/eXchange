@@ -1,4 +1,4 @@
-const db = require("../config/db.config.js");
+const db = require("../model");
 const Bank = db.banks;
 
 // Post a
@@ -7,6 +7,7 @@ exports.create = (req, res) => {
   Bank.create(req.body)
     .then((bank) => {
       // Send created bank to client
+      console.log(">> Created Bank: " + JSON.stringify(bank, null, 4));
       res.json(bank);
     })
     .catch((error) => res.status(400).send(error));

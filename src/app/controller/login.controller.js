@@ -1,4 +1,4 @@
-const db = require("../config/db.config.js");
+const db = require("../model");
 const Login = db.logins;
 
 // Post a
@@ -99,13 +99,11 @@ exports.signin = (req, res) => {
       );
 
       if (!passwordIsValid) {
-        return res
-          .status(401)
-          .send({
-            auth: false,
-            accessToken: null,
-            reason: "Invalid Password!",
-          });
+        return res.status(401).send({
+          auth: false,
+          accessToken: null,
+          reason: "Invalid Password!",
+        });
       }
 
       const token = "1234";
