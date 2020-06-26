@@ -1,8 +1,15 @@
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
-const app = express();
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+
+// Load config
+dotenv.config({ path: "./config/config.env" });
+
+const app = express();
+
+const PORT = process.env.PORT || 9090;
 
 app.options("*", cors());
 app.use(function (req, res, next) {
@@ -54,9 +61,9 @@ require("./app/route/wiredetail.route.js")(app);
 require("./app/route/auth.route.js")(app);
 
 // Create a Server
-var server = app.listen(9090, "0.0.0.0", function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log("eXchange Server listening at http://%s:%s", host, port);
-});
+app.listen(
+  PORT,
+  console.log(
+    `🚀 Server eXchange running in ${process.env.NODE_ENV} mode on port http://localhost:${PORT}`
+  )
+);

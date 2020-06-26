@@ -1,21 +1,41 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, Sequelize) {
-  const Chartaccount = sequelize.define("chartaccount", {
-    uuid: {
-      // primaryKey: true,
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV1,
+  const Chartaccount = sequelize.define(
+    "chartaccount",
+    {
+      uuid: {
+        // primaryKey: true,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV1,
+      },
+      namechartaccount: {
+        type: Sequelize.STRING(40),
+        allowNull: true,
+      },
+      io: {
+        type: Sequelize.STRING(1),
+        allowNull: true,
+      },
+      createdAt: {
+        type: "TIMESTAMP(3)",
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+        allowNull: false,
+      },
+      updatedAt: {
+        type: "TIMESTAMP(3)",
+        defaultValue: Sequelize.literal(
+          "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
+        ),
+        allowNull: false,
+      },
     },
-    namechartaccount: {
-      type: Sequelize.STRING(40),
-      allowNull: true,
+    {
+      engine: "InnoDB",
+      charset: "utf8",
     },
-    io: {
-      type: Sequelize.STRING(1),
-      allowNull: true,
-    },
-  });
+    { tableName: "t_chartaccount", paranoid: true }
+  );
 
   return Chartaccount;
 };

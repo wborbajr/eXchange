@@ -27,11 +27,16 @@ module.exports = function (sequelize, Sequelize) {
       type: Sequelize.DECIMAL,
       allowNull: true,
     },
-    // ,
-    // fk_idclient: {
-    //   type: Sequelize.INTEGER(11),
-    //   allowNull: true
-    // }
+    created_at: {
+      type: Sequelize.DATE(3),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP(3)"),
+    },
+    updated_at: {
+      type: Sequelize.DATE(3),
+      defaultValue: Sequelize.literal(
+        "CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)"
+      ),
+    },
   });
 
   return Parameter;

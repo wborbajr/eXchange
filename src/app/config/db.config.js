@@ -1,11 +1,16 @@
+const Sequelize = require("sequelize");
 const env = require("./env.js");
 
-const Sequelize = require("sequelize");
+// const db = require("./db.js");
+
+const db = {};
+
 const sequelize = new Sequelize(env.database, env.username, env.password, {
   host: env.host,
   dialect: env.dialect,
-  // operatorsAliases: false,
-
+  // define: {
+  //   timestamps: false,
+  // },
   pool: {
     max: env.max,
     min: env.pool.min,
@@ -13,8 +18,6 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
     idle: env.pool.idle,
   },
 });
-
-const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;

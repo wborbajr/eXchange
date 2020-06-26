@@ -5,19 +5,27 @@
   "main": "bootstrap.js",
   "scripts": {
     "test": "test bootstrap.js",
-    "start": "nodemon bootstrap.js"
+    "start": "cross-env NODE_ENV=production node bootstrap",
+    "dev": "cross-env NODE_ENV=development nodemon bootstrap"
   },
-  "author": "",
+  "author": "Waldir Borba Junior <wborbajr@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
     "mysql2": "^2.0.2",
-    "nodemon": "^2.0.3",
     "sequelize": "^5.21.7",
     "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4"
   }
 }
